@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { BookOpen, Globe, Quote, Sparkles, FileText, Zap, MessageSquare, Brain } from 'lucide-react'
+import { BookOpen, Globe, Quote, Sparkles, FileText, Zap, Brain } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const features = [
@@ -75,22 +75,12 @@ export function WelcomeSection() {
       <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-4xl mx-auto space-y-6">
+      <div className="relative z-10 w-full max-w-6xl mx-auto space-y-8">
         {/* Hero section */}
         <div className={cn(
           "space-y-4",
           mounted && "animate-fade-in-up"
         )}>
-          {/* Logo/Icon */}
-          <div className="flex items-center justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 blur-xl bg-gradient-to-r from-primary/50 to-accent/50 rounded-full" />
-              <div className="relative glass rounded-2xl p-4 gradient-border">
-                <MessageSquare className="h-12 w-12 text-primary" />
-              </div>
-            </div>
-          </div>
-
           {/* Title with gradient */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             <span className="gradient-text">RAG Chatbot</span>
@@ -111,7 +101,7 @@ export function WelcomeSection() {
 
         {/* Feature cards */}
         <div className={cn(
-          "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
+          "w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch",
           mounted && "animate-fade-in-up delay-200"
         )}>
           {features.map((feature, index) => {
@@ -120,7 +110,7 @@ export function WelcomeSection() {
               <div
                 key={feature.label}
                 className={cn(
-                  "group relative glass rounded-xl p-5 card-hover gradient-border overflow-hidden",
+                  "group relative glass rounded-xl p-5 card-hover gradient-border overflow-hidden h-full min-h-[170px] flex flex-col",
                   mounted && "animate-fade-in-up"
                 )}
                 style={{ animationDelay: `${200 + index * 100}ms` }}
