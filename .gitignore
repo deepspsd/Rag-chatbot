@@ -38,5 +38,9 @@ frontend/.turbo/
 # Frontend build artifacts
 frontend/dist/
 
-# PDFs / large artifacts (optional)
-# dataset/pdfs/
+# PDFs / large artifacts 
+data/chroma/
+data/uploads/
+data/dataset/pdfs/
+data/dataset/images/
+data/chroma/chroma.sqlite3
