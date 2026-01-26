@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+ragvenv/
+
+# Environment
+.env
+.env.*
+
+# FastAPI / Uvicorn
+*.log
+
+# Chroma / app data
+data/chroma/
+data/uploads/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Next.js
+frontend/.next/
+frontend/node_modules/
+frontend/out/
+frontend/.turbo/
+
+# Next / Vercel
+.vercel/
+
+# Frontend build artifacts
+frontend/dist/
+
+# PDFs / large artifacts (optional)
+# dataset/pdfs/
