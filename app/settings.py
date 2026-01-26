@@ -50,7 +50,7 @@ def get_settings() -> Settings:
         pdf_dir=os.getenv("PDF_DIR", "dataset/pdfs").strip(),
         top_k=int(os.getenv("TOP_K", "12")),
         similarity_threshold=float(os.getenv("SIMILARITY_THRESHOLD", "0.5")),
-        web_search_enabled=os.getenv("WEB_SEARCH_ENABLED", "false").lower() == "true",
+        web_search_enabled=os.getenv("WEB_SEARCH_ENABLED", "true").lower() == "true",
         web_max_results=int(os.getenv("WEB_MAX_RESULTS", "6")),
         web_max_chars=int(os.getenv("WEB_MAX_CHARS", "12000")),
         cache_max_items=int(os.getenv("CACHE_MAX_ITEMS", "512")),
