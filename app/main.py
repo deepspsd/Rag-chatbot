@@ -83,6 +83,11 @@ def health():
     }
 
 
+@app.get("/api/health")
+def api_health():
+    return health()
+
+
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest):
     logger.info(
@@ -92,6 +97,18 @@ def chat(request: ChatRequest):
             "source_filter": request.source or None,
         },
     )
+
+    if not request.source:
+        return ChatResponse(
+            answer="Documents are not uploaded. Please upload a PDF to ask questions.",
+            meta={
+                "mode": "no_documents_uploaded",
+                "sources": [],
+                "urls": [],
+                "diagrams": [],
+                "retrieval": {"type": "no_source_selected"},
+            },
+        )
     
     response = rag_query(
         groq_api_key=settings.groq_api_key,
