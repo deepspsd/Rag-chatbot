@@ -2,6 +2,8 @@
 
 A full-stack Retrieval-Augmented Generation (RAG) chatbot application that allows users to upload PDF documents and ask questions about them using AI. The system combines document retrieval with large language models to provide accurate, context-aware answers.
 
+Built using FastAPI for backend and TypeScript for frontend. ChromaDB for VectorDB and Groq API's Llama models for LLM.
+
 ## 🌟 Features
 
 - **📄 PDF Document Processing**: Upload and process PDF documents with automatic text extraction and chunking
